@@ -4,7 +4,7 @@ import snowflake.connector
 import requests
 from urllib.error import URLError
 
-streamlit.title("My Parents New Healthy Dinner")
+streamlit.title("Chaudhari Smoothie Center")
 
 streamlit.header('Breakfast Favorites')
 streamlit.text(' 🥣 Omega 3 & Blueberry Oatmeal')
@@ -55,7 +55,7 @@ def insert_row_snowflake(new_fruit):
           my_cur.execute("insert into fruit_load_list values('" + new_fruit + "')")
           return "Thanks For Adding "+ new_fruit
         
-add_my_fruit = streamlit.text_input('What fruit would you like information about?','jackfruit')
+add_my_fruit = streamlit.text_input('Add below fruit to the list?','jackfruit')
 #Add a button to load a fruit
 if streamlit.button('Add a fruit to the list'):
     my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
